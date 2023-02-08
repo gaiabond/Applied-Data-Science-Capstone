@@ -53,7 +53,7 @@ Output(component_id='success-pie-chart', component_property='figure'),
 Input(component_id='site-dropdown', component_property='value'),)
 def get_pie_chart(entered_site):
     if entered_site == 'ALL':
-        data = spacex_df.groupby(['Launch Site'])['class'].sum()
+        data = spacex_df.groupby(['Launch Site'])['class'].count()
         fig = px.pie(
         names = launch_sites, 
         values = data,
